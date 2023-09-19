@@ -27,10 +27,10 @@ const Header = () => {
             <div className='header__options'>
                 <ul className='header__list header__list--mobile'>
                 <li className='header__li header__li--mobile' onClick={(e)=>{navigate('/'); toggleMenu(e)}}>Home</li>
-                    <li className='header__li header__li--mobile'>Projects</li>
+                    <li className='header__li header__li--mobile' onClick={(e)=>{navigate('/projects'); toggleMenu(e)}}>Projects</li>
                     <li className='header__li header__li--mobile'>Blog</li>
-                    <li className='header__li header__li--mobile'onClick={(e)=>{navigate('/team'); toggleMenu(e)}}>Team</li>
-                    <li className='header__li header__li--cta'onClick={(e)=>{navigate('/contact'); toggleMenu(e)}}>Contact</li>
+                    <li className='header__li header__li--mobile' onClick={(e)=>{navigate('/team'); toggleMenu(e)}}>Team</li>
+                    <li className='header__li header__li--cta' onClick={(e)=>{navigate('/contact'); toggleMenu(e)}}>Contact</li>
                 </ul>
                 <AiOutlineClose className='header__icon' onClick={toggleMenu} />
             </div>

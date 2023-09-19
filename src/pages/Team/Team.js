@@ -9,7 +9,7 @@ return (
     <main className='team'>
         <section className='team__section'>
             <h1 className='team__heading'>Meet Our Team of Proffesionals</h1>
-            <p className='team__slogan'>We don't stop at hiring the best; we empower them to become even better. Our commitment to excellence extends to ongoing training and development programs that keep our specialists at the forefront of industry trends and techniques.</p>
+            <p className='team__slogan'>We don't stop at hiring the best! We empower them to become even better. Our commitment to excellence extends to ongoing training and development programs that keep our specialists at the forefront of industry trends and techniques.</p>
         </section>
         <section className='team__section'>
             <h2 className='team__subheading'>Our Team Members:</h2>

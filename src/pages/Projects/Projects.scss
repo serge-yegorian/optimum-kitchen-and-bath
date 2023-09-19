@@ -1,0 +1,49 @@
+.projects {
+    padding: 1rem;
+
+    &__image {
+        width: 100%;
+        margin-bottom: 0;
+        border-bottom: 2px solid black;
+        filter: grayscale(100%);
+    }
+
+    &__slogan {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__project {
+        margin-bottom: 2rem;
+        border: 2px solid white;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    &__project:hover {
+        border: 2px solid black;
+    }
+
+    &__project:hover &__data {
+        background-color: black;
+        color: white;
+    }
+
+    &__project:hover &__image {
+        filter: none;
+    }
+
+    &__data {
+        padding: 1rem;
+        margin-top: -5px;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+        line-height: 1;
+        transition: 0.2s;
+    }
+
+    &__city {
+        line-height: 1;
+    }
+}

@@ -20,7 +20,7 @@ const Home = () => {
                 <section className='home__section'>
                     <h2 className='home__subheading'>Recent Work</h2>
                     <p className='home__description home__description--section'>We take immense pride in presenting our latest creations. Explore our Recent Work and discover the artistry and craftsmanship that defines us. </p>
-                    <button className='home__cta'>Check allowing Work</button>
+                    <button className='home__cta'>Check Recent Work</button>
                     <div className='home__container'>
                         <div className='home__work-div'>
                             <img alt='project' className='home__work' src={require('../../assets/images/work1.png')}/>
