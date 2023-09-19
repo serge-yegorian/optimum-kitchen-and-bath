@@ -1,0 +1,25 @@
+//global 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+*::selection {
+    color: white;
+    background-color: black;
+}
+
+.disable-scroll {
+    overflow: hidden;
+}
+
+
+//fonts
+@font-face {
+    font-family:'Space Grotesk';
+    src: url('./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf');
+    font-weight: 0 1000;
+    font-display: swap;
+}

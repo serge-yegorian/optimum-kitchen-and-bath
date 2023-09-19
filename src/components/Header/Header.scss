@@ -1,0 +1,112 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 3rem;
+    z-index: 999;
+
+    &__logo {
+        display: none;
+    }
+
+    &__cta {
+        display: none;
+    }
+
+    &__list {
+        list-style: none;
+        display: none;
+    }
+
+    &__icon {
+        height: 61px;
+        width: 61px;
+        font-size: 3.5rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border: 2px solid black;
+        transition: 0.2s;
+        
+    }
+
+    &__icon:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &__icon--mobile {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        background-color: white;
+    }
+
+    &__options {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transform: translateY(100dvh);
+        transition: 0.2s;
+    }
+
+    &__list--mobile {
+        display: block;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__options--open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: white;
+    }
+
+    &__li--mobile {
+        margin-left: 1rem;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        padding: 0.5rem 1rem;
+        border: 2px solid black;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    &__li--mobile:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &__li--cta {
+        margin-left: 1rem;
+        font-size: 1.6rem;
+        width: fit-content;
+        color: #FF0000;
+        background-color: white;
+        border: 2px solid #FF0000;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    &__li--cta:hover {
+        background-image: linear-gradient(to bottom, #FF3333, #FF0000);
+        color: white;
+    }
+}

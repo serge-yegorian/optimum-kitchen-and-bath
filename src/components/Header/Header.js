@@ -1,0 +1,37 @@
+import './Header.scss';
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+
+const Header = () => {
+
+    const toggleMenu = (e) => {
+        e.preventDefault();
+        const menu = document.querySelector('.header__options');
+
+        document.body.classList.toggle('disable-scroll')
+        menu.classList.toggle('header__options--open')
+        }
+
+    return (
+        <header className='header'>
+            <img className='header__logo' src={require('../../assets/images/logo.png')}/>
+            <ul className='header__list'>
+                <li className='header__li'>Projects</li>
+                <li className='header__li'>Blog</li>
+                <li className='header__li'>Team</li>
+            </ul>
+            <button type='button' className='header__cta'>Contact</button>
+            <AiOutlineMenu className='header__icon header__icon--mobile' onClick={toggleMenu}/>
+            <div className='header__options'>
+                <ul className='header__list header__list--mobile'>
+                    <li className='header__li header__li--mobile'>Projects</li>
+                    <li className='header__li header__li--mobile'>Blog</li>
+                    <li className='header__li header__li--mobile'>Team</li>
+                    <li className='header__li header__li--cta'>Contact</li>
+                </ul>
+                <AiOutlineClose className='header__icon' onClick={toggleMenu} />
+            </div>
+        </header>
+    );
+}
+
+export default Header;

@@ -1,0 +1,73 @@
+.footer {
+    padding: 1rem;
+    background-color: black;
+    color: white;
+
+    &__list {
+        list-style: none;
+    }
+
+    &__container {
+        margin-bottom: 2rem;
+    }
+
+    &__li {
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    &__li:hover {
+        color: lightgray;
+    }
+
+    &__subheading {
+        margin-bottom: 1rem;
+    }
+
+    &__description{
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        outline: none;
+        height: 2rem;
+        width: 80%;
+        padding: 0 0.5rem;
+        border: none;
+    }
+
+    &__input-div {
+        position: relative;
+        display: flex;
+
+
+        margin-bottom: 6rem;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0.5rem;
+        color: black;
+        top: 0.4rem;
+        background-color: white;
+        padding: 0 0.5rem;
+        transition: 0.2s;
+    }
+
+    &__input:focus ~ &__label,
+    &__input:valid ~ &__label {
+        transform: translateY(-0.8rem);
+        font-size: 0.8rem;
+    }
+
+    &__submit {
+        height: 2rem;
+        border: none;
+        background-color: lightgray;
+        color: black;
+        width: 20%;
+        font-size: 1.5rem;
+    }
+
+}
