@@ -14,21 +14,21 @@ const Projects = () => {
                 <section className='projects__section'>
                     <div className='projects__container'>
                         <div className='projects__project'>
-                            <img className='projects__image' src={require('../../assets/images/work1.png')}/>
+                            <img alt='project' className='projects__image' src={require('../../assets/images/work1.png')}/>
                             <div className='projects__data'>
                                 <h2 className='projects__city'>Boca Raton</h2>
                                 <h3 className='projects__date'>June 2023</h3>
                             </div>
                         </div>
                         <div className='projects__project'>
-                            <img className='projects__image' src={require('../../assets/images/blog3.png')}/>
+                            <img alt='project' className='projects__image' src={require('../../assets/images/blog3.png')}/>
                             <div className='projects__data'>
                                 <h2 className='projects__city'>West Palm Beach</h2>
                                 <h3 className='projects__date'>May 2023</h3>
                             </div>
                         </div>
                         <div className='projects__project'>
-                            <img className='projects__image' src={require('../../assets/images/blog2.png')}/>
+                            <img alt='project' className='projects__image' src={require('../../assets/images/blog2.png')}/>
                             <div className='projects__data'>
                                 <h2 className='projects__city'>Jupyter</h2>
                                 <h3 className='projects__date'>March 2023</h3>

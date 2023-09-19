@@ -1,0 +1,38 @@
+.blog {
+    padding: 1rem;
+
+    &__blog-image {
+        width: 100%;
+    }
+
+    &__slogan {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__blog-image {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: 0.2s;
+    }
+
+    &__blogpost {
+        margin-bottom: 2rem;
+        border: 2px solid black;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    &__inner {
+        padding: 1rem;
+    }
+
+    &__blogpost:hover &__blog-image {
+        filter: grayscale(0);
+    }
+
+    &__blogpost:hover {
+        background-color: black;
+        color: white;
+    }
+}

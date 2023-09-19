@@ -108,6 +108,8 @@
 
     &__blog-image {
         width: 100%;
+        filter: grayscale(100%);
+        transition: 0.2s;
     }
 
     &__blogpost {
@@ -119,11 +121,6 @@
 
     &__inner {
         padding: 1rem 1rem 0;
-    }
-
-    &__blog-image {
-        filter: grayscale(100%);
-        transition: 0.2s;
     }
 
     &__blogpost:hover &__blog-image {
