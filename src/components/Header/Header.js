@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img className='header__logo' src={require('../../assets/images/logo.png')}/>
+            <img className='header__logo' alt='logo' src={require('../../assets/images/logo.png')}/>
             <ul className='header__list'>
                 <li className='header__li'>Projects</li>
                 <li className='header__li'>Blog</li>
@@ -23,6 +23,7 @@ const Header = () => {
             <AiOutlineMenu className='header__icon header__icon--mobile' onClick={toggleMenu}/>
             <div className='header__options'>
                 <ul className='header__list header__list--mobile'>
+                <li className='header__li header__li--mobile'>Home</li>
                     <li className='header__li header__li--mobile'>Projects</li>
                     <li className='header__li header__li--mobile'>Blog</li>
                     <li className='header__li header__li--mobile'>Team</li>

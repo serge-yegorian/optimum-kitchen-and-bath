@@ -20,7 +20,7 @@ const Home = () => {
                         <button type='button' className='home__cta'>Order</button>
                     </div>
                     <div className='home__container'>
-                        <img className='home__image' src={require('../../assets/images/hero.png')}/>
+                        <img alt='hero' className='home__image' src={require('../../assets/images/hero.png')}/>
                     </div>
                 </section>
                 <section className='home__section'>
@@ -29,15 +29,15 @@ const Home = () => {
                     <button className='home__cta'>Check allowing Work</button>
                     <div className='home__container'>
                         <div className='home__work-div'>
-                            <img className='home__work' src={require('../../assets/images/work1.png')}/>
+                            <img alt='project' className='home__work' src={require('../../assets/images/work1.png')}/>
                             <div className='home__date'>Sept 2023</div>
                         </div>
                         <div className='home__work-div'>
-                            <img className='home__work' src={require('../../assets/images/work2.png')}/>
+                            <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
                             <div className='home__date'>Aug 2023</div>
                         </div>
                         <div className='home__work-div'>
-                            <img className='home__work' src={require('../../assets/images/work3.png')}/>
+                            <img alt='project' className='home__work' src={require('../../assets/images/work3.png')}/>
                             <div className='home__date'>Jun 2023</div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const Home = () => {
                     <button className='home__cta'>Read Our Wisdom</button>
                     <div className='home__container'>
                         <div className='home__blogpost'>
-                            <img className='home__blog-image' src={require('../../assets/images/blog1.png')}/>
+                            <img alt='article' className='home__blog-image' src={require('../../assets/images/blog1.png')}/>
                             <div className='home__inner'>
                                 <h3 className='home__blog-name'>How to Choose a Cabinet</h3>
                                 <h4 className='home__testimonial-date'>August 2022</h4>
@@ -99,7 +99,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className='home__blogpost'>
-                            <img className='home__blog-image' src={require('../../assets/images/blog2.png')}/>
+                            <img alt='article' className='home__blog-image' src={require('../../assets/images/blog2.png')}/>
                             <div className='home__inner'>
                                 <h3 className='home__blog-name'>How to Build a Cabinet Yourself</h3>
                                 <h4 className='home__testimonial-date'>March 2022</h4>
@@ -107,7 +107,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div className='home__blogpost'>
-                            <img className='home__blog-image' src={require('../../assets/images/blog3.png')}/>
+                            <img alt='article' className='home__blog-image' src={require('../../assets/images/blog3.png')}/>
                             <div className='home__inner'>
                                 <h3 className='home__blog-name'>How to Choose a Cabinet</h3>
                                 <h4 className='home__testimonial-date'>June 2022</h4>
@@ -115,6 +115,9 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </section>
+                <section className='home__section'>
+                    <button className='home__cta home__cta--main'>Request a Quote</button>
                 </section>
             </main>
             <Footer/>

@@ -135,5 +135,13 @@
         color: white;
     }
 
+    &__cta--main {
+        width: 100%;
+    }
+
+    &__section:last-of-type {
+        margin-bottom: 0;
+    }
+
 
 }
