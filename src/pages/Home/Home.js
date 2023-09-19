@@ -1,12 +1,6 @@
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header'
 import './Home.scss'
-import { GiEcology } from "react-icons/gi";
-import { MdEnergySavingsLeaf } from "react-icons/md";
-import { FaBottleWater } from "react-icons/fa6";
-
-
-
 
 const Home = () => {
     return (

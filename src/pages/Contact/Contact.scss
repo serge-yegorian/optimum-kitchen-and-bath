@@ -1,0 +1,69 @@
+.contact {
+    padding: 1rem;
+
+    &__image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        width: 100%;
+        height: 2.5rem;
+        border-radius: none;
+        outline: none;
+        padding:  0.5rem;
+        font-size: 1rem;
+    }
+
+    &__input--textarea {
+        height: initial;
+        resize: none;
+    }
+
+    &__input-div {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0.5rem;
+        color: black;
+        top: 0.7rem;
+        background-color: white;
+        padding: 0 0.5rem;
+        transition: 0.2s;
+    }
+
+    &__input:focus ~ &__label,
+    &__input:valid ~ &__label {
+        transform: translateY(-0.8rem);
+        font-size: 0.8rem;
+    }
+
+    &__cta {
+        font-size: 1.3rem;
+        padding: 0.5rem;
+        width: fit-content;
+        color: #FF0000;
+        background-color: white;
+        border: 2px solid #FF0000;
+        transition: 0.2s;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+
+    &__cta:hover {
+        background-image: linear-gradient(to bottom, #FF3333, #FF0000);
+        color: white;
+    }
+
+    &__cta--main {
+        width: 100%;
+    }
+    
+}
