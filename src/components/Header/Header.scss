@@ -65,8 +65,8 @@
         width: 61px;
         font-size: 3.5rem;
         position: absolute;
-        bottom: 1rem;
-        right: 1rem;
+        bottom: 2rem;
+        right: 2rem;
         cursor: pointer;
         padding: 0.5rem;
         border: 2px solid white;
@@ -119,7 +119,7 @@
     }
 
     &__li--mobile {
-        margin-left: 1rem;
+        margin-left: 2rem;
         font-size: 1.6rem;
         margin-bottom: 2rem;
         padding: 0.5rem 1rem;
@@ -136,12 +136,12 @@
 
     &__li--cta {
         text-align: center;
-        margin-left: 1rem;
+        margin-left: 2rem;
         font-size: 1.6rem;
         color: #ffc800;
         background-color: #212121;
         border: 2px solid #ffc800;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         padding: 0.5rem 1rem;
         transition: 0.2s;
         cursor: pointer;
