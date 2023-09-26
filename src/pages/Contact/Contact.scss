@@ -1,5 +1,39 @@
+@use '../../assets/styles/global.scss' as *;
+
 .contact {
-    padding: 1rem;
+    
+    &__section {
+        padding: 1rem;
+    @include tablet {
+        padding: 2rem;
+    }
+    }
+
+    @include desktop {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__section--form {
+        @include desktop {
+            width: 50%
+        }
+    };
+
+    &__section--image {
+        @include desktop {
+            width: 50%
+        }
+        
+    }
+
+
+    &__heading {
+        @include tablet {
+            font-size: 3rem;
+        margin-bottom: 1rem;
+        }
+    }
 
     &__image {
         width: 100%;
@@ -8,6 +42,13 @@
 
     &__description {
         margin-bottom: 1rem;
+        @include tablet {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+        @include desktop {
+            font-size: 1.8rem;
+        }
     }
 
     &__input {
@@ -60,10 +101,6 @@
     &__cta:hover {
         background-image: linear-gradient(to bottom, #FF3333, #FF0000);
         color: white;
-    }
-
-    &__cta--main {
-        width: 100%;
     }
     
 }

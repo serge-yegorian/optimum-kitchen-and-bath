@@ -19,6 +19,9 @@ const Project = () => {
     console.log(projectId)
 
     useEffect(()=> {
+            window.scrollTo({
+                top: 0
+            });
         axios.get(`http://localhost:5001/project/${projectId}`)
         .then((response) => {
             console.log(response.data)
@@ -31,7 +34,7 @@ const Project = () => {
         .catch((err) => {
             console.log(err)
         })
-    })
+    }, [])
 
     const [isCopied, setIsCopied] = useState(false);
 
@@ -47,7 +50,7 @@ const Project = () => {
         // Reset the "Copied" status after 2 seconds
         setTimeout(() => {
           setIsCopied(false);
-        }, 2000);
+        }, 10000);
       };
     
 

@@ -1,5 +1,27 @@
+@use '../../assets/styles/global.scss' as *;
+
 .blog {
-    padding: 1rem;
+    
+    &__section {
+        padding: 1rem;
+    @include tablet {
+        padding: 2rem;
+    }
+    }
+
+    &__heading {
+        @include tablet {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__container {
+        @include desktop {
+            display: flex;
+            gap: 2rem;
+        }
+    }
 
     &__blog-image {
         width: 100%;
@@ -8,6 +30,24 @@
     &__slogan {
         font-size: 1.2rem;
         margin-bottom: 2rem;
+        @include tablet {
+            font-size: 1.4rem;
+        }
+        @include desktop {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__blog-name {
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+
+    &__description{
+        @include tablet {
+            font-size: 1.2rem;
+        }
     }
 
     &__blog-image {
@@ -18,9 +58,11 @@
 
     &__blogpost {
         margin-bottom: 2rem;
-        border: 2px solid black;
         transition: 0.2s;
         cursor: pointer;
+        @include tablet {
+            margin-bottom: 3rem;
+        }
     }
 
     &__inner {
@@ -34,5 +76,9 @@
     &__blogpost:hover {
         background-color: black;
         color: white;
+    }
+
+    &__date {
+        margin-bottom: 1rem;
     }
 }

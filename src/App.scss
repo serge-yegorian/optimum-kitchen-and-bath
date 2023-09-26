@@ -1,3 +1,5 @@
+@use './assets/styles/global.scss' as *;
+
 //global 
 * {
     margin: 0;
@@ -7,12 +9,17 @@
 }
 
 *::selection {
-    color: white;
-    background-color: black;
+    color:  #212121;
+    background-color: #F8F8FF;
 }
 
 .disable-scroll {
     overflow: hidden;
+}
+
+body {
+    background-color: #212121;
+    color: #F8F8FF;
 }
 
 
@@ -20,6 +27,13 @@
 @font-face {
     font-family:'Space Grotesk';
     src: url('./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf');
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:'Cornerstone';
+    src: url('./assets/fonts/Cornerstone.ttf');
     font-weight: 0 1000;
     font-display: swap;
 }

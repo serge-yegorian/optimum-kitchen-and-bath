@@ -1,7 +1,25 @@
+@use '../../assets/styles/global.scss' as *;
+
 .footer {
     padding: 1rem;
     background-color: black;
     color: white;
+    @include tablet {
+        padding: 2rem;
+    }
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__flex-container {
+        @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
 
     &__list {
         list-style: none;
@@ -9,6 +27,7 @@
 
     &__container {
         margin-bottom: 2rem;
+        max-width: 660px;
     }
 
     &__li {
@@ -23,10 +42,16 @@
 
     &__subheading {
         margin-bottom: 1rem;
+        @include desktop {
+            font-size: 1.5rem;
+        }
     }
 
     &__description{
         margin-bottom: 1rem;
+        @include desktop {
+            font-size: 1.2rem;
+        }
     }
 
     &__input {
@@ -50,6 +75,9 @@
 
 
         margin-bottom: 6rem;
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     &__label {

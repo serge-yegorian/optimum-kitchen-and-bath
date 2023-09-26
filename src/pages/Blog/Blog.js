@@ -1,12 +1,32 @@
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './Blog.scss'
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Blog = () => {
+    
+    useEffect(()=> {
+        window.scrollTo({
+            top: 0
+        });
+    }, [])
+
     return (
         <>
         <Header/>
         <main className='blog'>
+        <section className='home__section home__section--flex home__section--flex-blog'>
+                    <div className='home__container home__container--black'>
+                        <div>
+                        <h1 className='home__heading'>Blog</h1>
+                        <p className='home__slogan'>Explore Our Articles</p>
+                        </div>
+                    </div>
+                    <div className='home__container'>
+                        <img alt='hero' className='home__image' src={require('../../assets/images/hero.png')}/>
+                    </div>
+                </section>
             <section className='blog__section'>
                 <h1 className='blog__heading'>Blog</h1>
                 <p className='blog__slogan'>Dive into a world of design ideas, renovation tips, and customer success stories. Our blog is your go-to resource for expert advice, inspiration, and the latest trends in kitchen and cabinet design. Explore, learn, and discover how we can transform your kitchen into the heart of your dream home.</p>

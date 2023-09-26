@@ -1,18 +1,33 @@
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './Team.scss';
+import { useEffect } from 'react';
 
 const Team = () => {
+
+    useEffect(()=> {
+        window.scrollTo({
+            top: 0
+        });
+    })
+
 return (
     <>
     <Header/>
     <main className='team'>
+    <section className='home__section home__section--flex home__section--flex-team'>
+                    <div className='home__container home__container--black'>
+                        <div>
+                        <h1 className='home__heading'>Team of Proffesionals</h1>
+                        <p className='home__slogan'>Meet our superstars</p>
+                        </div>
+                    </div>
+                </section>
         <section className='team__section'>
-            <h1 className='team__heading'>Meet Our Team of Proffesionals</h1>
+            <h1 className='team__heading'>Meet Our Proffesionals</h1>
             <p className='team__slogan'>We don't stop at hiring the best! We empower them to become even better. Our commitment to excellence extends to ongoing training and development programs that keep our specialists at the forefront of industry trends and techniques.</p>
         </section>
         <section className='team__section'>
-            <h2 className='team__subheading'>Our Team Members:</h2>
             <div className='team__container'>
                 <div className='team__member'>
                     <img className='team__image' src={require('../../assets/images/worker1.png')}/>
@@ -38,7 +53,7 @@ return (
             </div>
         </section>
         <section className='team__section'>
-            <button className='team__cta team__cta--main'>Contact Us</button>
+            <button className='team__cta'>Contact Us</button>
         </section>
     </main>
     <Footer/>

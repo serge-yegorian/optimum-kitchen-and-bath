@@ -1,12 +1,33 @@
+@use '../../assets/styles/global.scss' as *;
+
 .team {
-    padding: 1rem;
+    
+    &__section {
+        padding: 1rem;
+    @include tablet {
+        padding: 2rem;
+    }
+    }
 
     &__heading {
         margin-bottom: 1rem;
+        @include tablet {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        gap: 2rem;
     }
 
     &__subheading {
         margin-bottom: 1rem;
+        @include tablet {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
     }
 
     &__description {
@@ -23,6 +44,9 @@
 
     &__name {
         margin-bottom: 1rem;
+        @include tablet {
+            font-size: 2rem;
+        }
     }
 
     &__content {
@@ -30,9 +54,19 @@
         padding-right: 2rem;
     }
 
+    &__description {
+        font-size: 1.2rem;
+    }
+
     &__slogan {
         margin-bottom: 2rem;
         font-size: 1.2rem;
+        @include tablet {
+            font-size: 1.4rem;
+        }
+        @include desktop {
+            font-size: 1.8rem;
+        }
     }
 
     &__cta {
@@ -45,6 +79,15 @@
         transition: 0.2s;
         cursor: pointer;
         margin-bottom: 1rem;
+        width: 100%;
+        @include tablet {
+            width: fit-content;
+            font-size: 1.6rem;
+            padding: 0 2rem;
+            height: 3rem;
+            display: block;
+            margin-bottom: 2rem;
+        }
     }
 
     &__cta:hover {
