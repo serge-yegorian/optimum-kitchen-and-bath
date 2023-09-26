@@ -52,9 +52,6 @@ return (
                 </div>
             </div>
         </section>
-        <section className='team__section'>
-            <button className='team__cta'>Contact Us</button>
-        </section>
     </main>
     <Footer/>
     </>
