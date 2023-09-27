@@ -21,7 +21,7 @@ const Home = () => {
                 <section className='home__section home__section--flex'>
                     <div className='home__container home__container--black'>
                         <div>
-                        <h1 className='home__heading'>Florida Kitchens and Cabinets</h1>
+                        <h1 className='home__heading'>Florida Kitchens, Baths, and Cabinetery</h1>
                         <p className='home__slogan'>Kitchens are the focal point of the home, so why not make your kitchen the best it can be?</p>
                         </div>
                     </div>
