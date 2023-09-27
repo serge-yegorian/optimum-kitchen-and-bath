@@ -123,7 +123,7 @@
     }
 
     &__description {
-        margin-bottom: 1rem;
+        padding-bottom: 1rem;
         @include tablet {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -303,7 +303,6 @@
 
     &__blogpost {
         margin-bottom: 2rem;
-        border: 2px solid white;
         transition: 0.2s;
         cursor: pointer;
         @include desktop {
