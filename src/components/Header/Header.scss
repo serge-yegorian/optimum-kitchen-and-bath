@@ -11,7 +11,7 @@
     z-index: 999;
     
     @include tablet {
-        background-color: #212121;
+        background-color: #111111;
         height: 6rem;
         top: 0;
         padding: 0 2rem;
@@ -115,7 +115,7 @@
         height: 100%;
         width: 100%;
         top: 0;
-        background-color: #212121;
+        background-color: #111;
     }
 
     &__li--mobile {
@@ -139,7 +139,7 @@
         margin-left: 2rem;
         font-size: 1.6rem;
         color: #ffc800;
-        background-color: #212121;
+        background-color: #111;
         border: 2px solid #ffc800;
         margin-bottom: 2rem;
         padding: 0.5rem 1rem;

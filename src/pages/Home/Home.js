@@ -1,16 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header'
 import './Home.scss'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
+    const navigate = useNavigate();
+    const [projects, setProjects] = useState([]);
+
     useEffect(()=> {
+        axios.get('http://localhost:5001/project/projects')
+        .then((response) => {
+            setProjects(response.data);
+            console.log(projects)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
         window.scrollTo({
             top: 0
         });
-    
-    })
+    }, [])
 
     
 
@@ -21,8 +33,8 @@ const Home = () => {
                 <section className='home__section home__section--flex'>
                     <div className='home__container home__container--black'>
                         <div>
-                        <h1 className='home__heading'>Florida Kitchens, Baths, and Cabinetery</h1>
-                        <p className='home__slogan'>Kitchens are the focal point of the home, so why not make your kitchen the best it can be?</p>
+                        <h1 className='home__heading'>Palm Beach<br/> Kitchens and Baths</h1>
+                        <p className='home__slogan'>ENHANCING LIVES THROUGH DESIGN</p>
                         </div>
                     </div>
                     <div className='home__container'>
@@ -30,12 +42,11 @@ const Home = () => {
                     </div>
                 </section>
                 <section className='home__section'>
-                    {/* START FROM HERE!!!! 11! */}
-                    <div className='home__container'>
-                        <div className='home__section-container'>
+                    <div className='home__container home__container--projects'>
+                        {/* <div className='home__section-container'>
                             <h2 className='home__subheading'>Recent Work</h2>
                             <p className='home__description home__description--section'>We take immense pride in presenting our latest creations. Explore our Recent Work and discover the artistry and craftsmanship that defines us. </p>
-                        </div>
+                        </div> */}
                         <div className='home__work-div'>
                             <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
                         </div>
@@ -51,23 +62,29 @@ const Home = () => {
                         <div className='home__work-div'>
                             <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
                         </div>
+                        {projects.map((project) => (
+                            <div onClick={()=>{navigate(`project/${project._id}`)}} className='home__work-div' key={project._id} style={{ backgroundImage: `url(${project.image.url})` }}>
+
+                            </div>
+                        ))}
                         
                     </div>
                 </section>
-                <section className='home__section'>
+                <section className='home__section home__section--accent'>
                     <div className='home__container'>
-                        <div className='home__section-container'>
-                            <h2 className='home__subheading'>Testimonials</h2>
-                            <p className='home__description home__description--section'>We're honored to share these glowing testimonials from our valued clients. See what they have to say about their experiences with us.</p>
+                        <div className='home__testimonial'>
+                            <h3 className='home__customer'>Donald Trump</h3>
+                            <p className='home__description'>Partnering with Palm Beach Kitchens and Baths has transformed my home.<br/><br/> Their expertise in kitchen and bath design, along with their superb customer service, made the entire process a pleasure.<br/><br/> For exceptional home upgrades, Palm Beach Kitchens and Baths is the name to trust!</p>
+                            <h4 className='home__testimonial-date'>June 2022</h4>
                         </div>
                         <div className='home__testimonial'>
                             <h3 className='home__customer'>Elon Musk</h3>
-                            <p className='home__description'>Optimum Cabinets has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive. I've had the opportunity to collaborate with various companies, but Optimum Cabinets' unique blend of creativity and craftsmanship sets them apart.<br/><br/> If you're in search of exceptional cabinet solutions, look no further than Optimum Cabinets</p>
+                            <p className='home__description'>Optimum Cabinets has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive.<br/><br/> I've had the opportunity to collaborate with various companies, but Optimum Cabinets' unique blend of creativity and craftsmanship sets them apart. </p>
                             <h4 className='home__testimonial-date'>December 2021</h4>
                         </div>
                         <div className='home__testimonial'>
                             <h3 className='home__customer'>Mark Zuckerberg</h3>
-                            <p className='home__description'>Optimum Cabinets has consistently demonstrated a commitment to excellence that is truly remarkable.<br/><br/> Their attention to detail and innovative designs make them a standout choice for anyone seeking top-notch cabinetry solutions. <br/><br/>I've had the privilege of witnessing their work firsthand, and I can confidently say that Optimum Cabinets is a company that goes above and beyond to deliver quality.</p>
+                            <p className='home__description'>Partnering with Palm Beach Kitchens and Baths has transformed my home.<br/><br/> Their expertise in kitchen and bath design, along with their superb customer service, made the entire process a pleasure.<br/><br/> For exceptional home upgrades, Palm Beach Kitchens and Baths is the name to trust!</p>
                             <h4 className='home__testimonial-date'>June 2022</h4>
                         </div>
                     </div>

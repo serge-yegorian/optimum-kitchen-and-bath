@@ -22,7 +22,7 @@ const Project = () => {
             window.scrollTo({
                 top: 0
             });
-        axios.get(`http://localhost:5001/project/${projectId}`)
+        axios.get(`http://localhost:5001/project/project${projectId}`)
         .then((response) => {
             console.log(response.data)
             setTitle(response.data.title)

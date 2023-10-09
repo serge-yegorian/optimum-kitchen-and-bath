@@ -10,4 +10,10 @@
     }
 }
 
+@mixin desktop-wide {
+    @media (min-width: 993px) {
+        @content;
+    }
+}
+
 $main: #cc9f52;
