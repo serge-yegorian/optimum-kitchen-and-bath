@@ -1,15 +1,31 @@
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './Blog.scss'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Blog = () => {
-    
+
+    const navigate = useNavigate()
+
+    const [blogposts, setBlogposts] = useState([]);
+
     useEffect(()=> {
         window.scrollTo({
             top: 0
         });
+    }, [])
+
+    useEffect(() => {
+        axios.get('http://localhost:5001/blog/blogposts')
+        .then((response) => {
+            setBlogposts(response.data);
+            console.log(blogposts)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [])
 
     return (
@@ -32,33 +48,19 @@ const Blog = () => {
                 <p className='blog__slogan'>Dive into a world of design ideas, renovation tips, and customer success stories. Our blog is your go-to resource for expert advice, inspiration, and the latest trends in kitchen and cabinet design. Explore, learn, and discover how we can transform your kitchen into the heart of your dream home.</p>
             </section>
             <section className='blog__section'>
-                <div className='blog__container'>
-                    <div className='blog__blogpost'>
-                        <img alt='article' className='blog__blog-image' src={require('../../assets/images/blog1.png')}/>
-                        <div className='blog__inner'>
-                            <h3 className='blog__blog-name'>How to Choose a Cabinet</h3>
-                            <h4 className='blog__date'>August 2022</h4>
-                            <p className='blog__description'>Selecting the perfect cabinets for your home is a decision that combines functionality and style. In our upcoming blog post, we delve into the art of choosing cabinets that not only complement your space but also optimize your storage needs. From materials and finishes to layout and design, discover the key factors that will empower you to make the ideal cabinet choice for your lifestyle and aesthetic preferences...</p>
-                        </div>
-                    </div>
-                    <div className='blog__blogpost'>
-                        <img alt='article' className='blog__blog-image' src={require('../../assets/images/blog2.png')}/>
-                        <div className='blog__inner'>
-                            <h3 className='blog__blog-name'>How to Choose a Cabinet</h3>
-                            <h4 className='blog__date'>August 2022</h4>
-                            <p className='blog__description'>Selecting the perfect cabinets for your home is a decision that combines functionality and style. In our upcoming blog post, we delve into the art of choosing cabinets that not only complement your space but also optimize your storage needs. From materials and finishes to layout and design, discover the key factors that will empower you to make the ideal cabinet choice for your lifestyle and aesthetic preferences...</p>
-                        </div>
-                    </div>
-
-                    <div className='blog__blogpost'>
-                        <img alt='article' className='blog__blog-image' src={require('../../assets/images/work3.png')}/>
-                        <div className='blog__inner'>
-                            <h3 className='blog__blog-name'>How to Destroy a Cabinet</h3>
-                            <h4 className='blog__date'>August 2022</h4>
-                            <p className='blog__description'>Destroy the perfect cabinets for your home is a decision that combines functionality and style. In our upcoming blog post, we delve into the art of destroying cabinets that not only complement your space but also optimize your storage needs. From materials and finishes to layout and design, discover the key factors that will empower you to destroy the ideal cabinet choice for your lifestyle and aesthetic preferences...</p>
-                        </div>
-                    </div>
-                </div>
+                {blogposts.map((blogpost) => (
+                            <div onClick={()=>{navigate(`blog/${blogpost._id}`)}} className='blog__blogpost' key={blogpost._id}>
+                                <div className='blog__blog-image' style={{ backgroundImage: `url(${blogpost.image.url})` }}>
+                                </div>
+                                <div className='blog__inner'>
+                                <h3 className='blog__blog-name'>{blogpost.title}</h3>
+                                <h4 className='blog__testimonial-date'>
+                                    {new Date(blogpost.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                                </h4>
+                                <p className='home__description'>{blogpost.summary}</p>
+                            </div>
+                            </div>
+                        ))}
             </section>
         </main>
         <Footer/>

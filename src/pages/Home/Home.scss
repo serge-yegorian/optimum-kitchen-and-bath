@@ -16,17 +16,23 @@
         }
     }
 
+    &__section--blog {
+        @include tablet {
+            padding: 0;
+        }
+        @include desktop {
+            padding: 0 2rem;
+        }
+        
+    }
+
     &__container {
         @include desktop {
             display: flex;
             gap: 2rem;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
         }
-    }
-
-    &__container--blog {
-        
     }
 
     &__container--black {
@@ -267,8 +273,6 @@
     }
 
     &__testimonial {
-        background-color: rgb(72, 72, 72);
-        border: 2px solid white;
         padding: 1rem;
         margin-bottom: 1rem;
         @include tablet {
@@ -342,9 +346,11 @@
         width: 100%;
         @include tablet {
             flex-grow: 1;
-            width: 20rem;
+            width: 18rem;
+            margin-right: 2rem;
         }
         @include desktop {
+
             height: fit-content;
         }
     }
@@ -364,6 +370,16 @@
 
     &__section:last-of-type {
         margin-bottom: 0;
+    }
+
+    &__container--blog {
+        display: flex;
+        flex-wrap: wrap;
+        @include tablet {
+            padding: 0;
+            gap: 0;
+        }
+        
     }
 
 

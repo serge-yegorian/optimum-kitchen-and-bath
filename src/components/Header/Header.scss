@@ -10,7 +10,7 @@
     height: 3rem;
     z-index: 999;
     
-    @include tablet {
+    @include desktop {
         background-color: #111111;
         height: 4rem;
         top: 0;
@@ -41,7 +41,7 @@
     &__logo {
         display: none;
         cursor: pointer;
-        @include tablet {
+        @include desktop {
             display: block;
             height: calc(4rem - 2px);
             padding-top: 1rem;
@@ -56,7 +56,7 @@
     &__list {
         list-style: none;
         display: none;
-        @include tablet {
+        @include desktop {
             display: flex;
             align-items: center;
         }
@@ -90,7 +90,7 @@
         align-items: center;
         border: 2px solid white;
         background-color: black;
-        @include tablet {
+        @include desktop {
             display: none;
         }
     }
@@ -147,7 +147,7 @@
         padding: 0.5rem 1rem;
         transition: 0.2s;
         cursor: pointer;
-        @include tablet {
+        @include desktop {
             border: none;
             padding: 0;
             margin: 0;
@@ -157,7 +157,7 @@
     &__li--cta:hover {
         background-color: $mainhover;
         color: $mainhover !important;
-        @include tablet {
+        @include desktop {
             background-color: transparent;
         }
     }
@@ -177,7 +177,7 @@
     }
 
     &__li:hover {
-        @include tablet {
+        @include desktop {
             color: lightgray;
         }
        

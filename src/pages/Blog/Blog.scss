@@ -6,25 +6,43 @@
         padding: 1rem;
     @include tablet {
         padding: 2rem;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    @include desktop {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin: 0 auto;
     }
     }
 
     &__heading {
+        width: 100%;
         @include tablet {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
     }
 
-    &__container {
-        @include desktop {
-            display: flex;
-            gap: 2rem;
-        }
+    &__blogpost {
+        width: 18rem;
+        flex-grow: 1;
+        height: fit-content;
     }
 
     &__blog-image {
         width: 100%;
+        height: 18rem;
+        background-size: cover;
+        background-position: center;
+
     }
 
     &__slogan {

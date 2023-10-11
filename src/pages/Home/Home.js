@@ -20,7 +20,7 @@ const Home = () => {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, []) 
 
     useEffect(() => {
         axios.get('http://localhost:5001/blog/blogposts')
@@ -101,7 +101,7 @@ const Home = () => {
                         </div>
                     </div>
                 </section> */}
-                <section className='home__section'>
+                <section className='home__section home__section--blog'>
                     <div className='home__container home__container--blog'>
                         {blogposts.map((blogpost) => (
                             <div onClick={()=>{navigate(`blog/${blogpost._id}`)}} className='home__blogpost' key={blogpost._id}>
