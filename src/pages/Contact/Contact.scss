@@ -4,6 +4,7 @@
     
     &__section {
         padding: 1rem;
+        margin: 0 auto;
     @include tablet {
         padding: 2rem;
     }
@@ -32,6 +33,7 @@
         @include tablet {
             font-size: 3rem;
         margin-bottom: 1rem;
+        text-align: center;
         }
     }
 
@@ -41,6 +43,7 @@
     }
 
     &__description {
+        text-align: center;
         margin-bottom: 1rem;
         @include tablet {
             font-size: 1.4rem;
@@ -68,6 +71,7 @@
     &__input-div {
         position: relative;
         margin-bottom: 1rem;
+        width:100%
     }
 
     &__label {
@@ -78,6 +82,7 @@
         background-color: white;
         padding: 0 0.5rem;
         transition: 0.2s;
+        cursor: text;
     }
 
     &__input:focus ~ &__label,
@@ -90,17 +95,25 @@
         font-size: 1.3rem;
         padding: 0.5rem;
         width: fit-content;
-        color: #FF0000;
+        color: $main;
         background-color: white;
-        border: 2px solid #FF0000;
+        border: 2px solid $main;
         transition: 0.2s;
         cursor: pointer;
         margin-bottom: 1rem;
+        width: 100%;
     }
 
     &__cta:hover {
-        background-image: linear-gradient(to bottom, #FF3333, #FF0000);
+        background-color: $mainhover;
         color: white;
+        border: 2px solid $mainhover;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
 }

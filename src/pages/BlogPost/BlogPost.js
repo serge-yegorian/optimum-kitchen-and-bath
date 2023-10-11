@@ -25,7 +25,7 @@ const BlogPost = () => {
                 top: 0
             });
         
-        axios.get(`http://localhost:5001/blog/${projectId}`)
+        axios.get(`http://localhost:5001/blog/blogpost/${projectId}`)
         .then((response) => {
             console.log(response.data)
             setTitle(response.data.title)
@@ -63,13 +63,16 @@ const BlogPost = () => {
         <>
         <Header/>
         <main className='blogpost'>
-            <img className='blogpost__image' src={image} />
-            <h1 className='blogpost__title'>{title}</h1>
-            <h2 className='blogpost__date'>{dateFinished}</h2>
-            <section className='blogpost__content' dangerouslySetInnerHTML={{__html:blogContent}}/>
-            <div className='blogpost__container'>
-                <button onClick={copyURL} className="blogpost__cta blogpost__cta--secondary">{isCopied ? 'URL Copied' : 'Share'}</button>
-                <button onClick={()=>{navigate('/contact')}} className='blogpost__cta'>Contact</button>
+            <div className='blogpost__image' style={{ backgroundImage: `url(${image})` }}>
+                <h1 className='blogpost__title'>{title}</h1>
+                <h2 className='blogpost__date'>{dateFinished}</h2>
+            </div>
+            <div className='blogpost__article'>
+                <section className='blogpost__content' dangerouslySetInnerHTML={{__html:blogContent}}/>
+                <div className='blogpost__container'>
+                    <button onClick={copyURL} className="blogpost__cta project__cta--secondary">{isCopied ? 'URL Copied' : 'Share'}</button>
+                    <button onClick={()=>{navigate('/contact')}} className='blogpost__cta'>Contact</button>
+                </div>
             </div>
         </main>
         <Footer/>

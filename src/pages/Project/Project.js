@@ -22,7 +22,7 @@ const Project = () => {
             window.scrollTo({
                 top: 0
             });
-        axios.get(`http://localhost:5001/project/project${projectId}`)
+        axios.get(`http://localhost:5001/project/project/${projectId}`)
         .then((response) => {
             console.log(response.data)
             setTitle(response.data.title)
@@ -58,13 +58,16 @@ const Project = () => {
         <>
         <Header/>
         <main className='project'>
-            <img className='project__image' src={image} />
-            <h1 className='project__title'>{title}</h1>
-            <h2 className='project__date'>{dateFinished}</h2>
-            <section className='project__content' dangerouslySetInnerHTML={{__html:projectContent}}/>
-            <div className='project__container'>
-                <button onClick={copyURL} className="project__cta project__cta--secondary">{isCopied ? 'URL Copied' : 'Share'}</button>
-                <button onClick={()=>{navigate('/contact')}} className='project__cta'>Contact</button>
+            <div className='project__image' style={{ backgroundImage: `url(${image})` }}>
+                <h1 className='project__title'>{title}</h1>
+                <h2 className='project__date'>{dateFinished}</h2>
+            </div>
+            <div className='project__article'>
+                <section className='project__content' dangerouslySetInnerHTML={{__html:projectContent}}/>
+                <div className='project__container'>
+                    <button onClick={copyURL} className="project__cta project__cta--secondary">{isCopied ? 'URL Copied' : 'Share'}</button>
+                    <button onClick={()=>{navigate('/contact')}} className='project__cta'>Contact</button>
+                </div>
             </div>
         </main>
         <Footer/>

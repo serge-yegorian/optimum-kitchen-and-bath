@@ -20,7 +20,7 @@ const Header = () => {
         useEffect(() => {
             const handleScroll = () => {
             // Check the scroll position and update the isScrolled state
-            const scrollThreshold = 100; // Adjust this value as needed
+            const scrollThreshold = 1; // Adjust this value as needed
             const scrolled = window.scrollY > scrollThreshold;
             setIsScrolled(scrolled);
             };

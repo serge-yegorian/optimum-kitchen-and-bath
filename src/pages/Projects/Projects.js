@@ -1,15 +1,35 @@
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './Projects.scss'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
+
+    const navigate = useNavigate()
+
+    const [projects, setProjects] = useState([])
 
     useEffect(()=> {
         window.scrollTo({
             top: 0
         });
     })
+
+    useEffect(()=> {
+        axios.get('http://localhost:5001/project/projects')
+        .then((response) => {
+            setProjects(response.data);
+            console.log(projects)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        window.scrollTo({
+            top: 0
+        });
+    }, [])
 
     return (
         <>
@@ -29,27 +49,17 @@ const Projects = () => {
                 </section>
                 <section className='projects__section'>
                     <div className='projects__container'>
-                        <div className='projects__project'>
-                            <img alt='project' className='projects__image' src={require('../../assets/images/work1.png')}/>
+                    {projects.map((project) => (
+                            <div className='projects__project' key={project._id} onClick={()=>navigate(`/project/${project._id}`)}>
+                            <div className='projects__image' style={{ backgroundImage: `url(${project.image.url})` }}>
+
+                            </div>
                             <div className='projects__data'>
-                                <h2 className='projects__city'>Boca Raton</h2>
-                                <h3 className='projects__date'>June 2023</h3>
+                                <h2 className='projects__city'>{project.title}</h2>
+                                <h3 className='projects__date'>{project.dateFinished}</h3>
                             </div>
                         </div>
-                        <div className='projects__project'>
-                            <img alt='project' className='projects__image' src={require('../../assets/images/blog3.png')}/>
-                            <div className='projects__data'>
-                                <h2 className='projects__city'>West Palm Beach</h2>
-                                <h3 className='projects__date'>May 2023</h3>
-                            </div>
-                        </div>
-                        <div className='projects__project'>
-                            <img alt='project' className='projects__image' src={require('../../assets/images/blog2.png')}/>
-                            <div className='projects__data'>
-                                <h2 className='projects__city'>Jupyter</h2>
-                                <h3 className='projects__date'>March 2023</h3>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </section>
             </main>

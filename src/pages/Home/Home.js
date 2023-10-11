@@ -9,6 +9,7 @@ const Home = () => {
 
     const navigate = useNavigate();
     const [projects, setProjects] = useState([]);
+    const [blogposts, setBlogposts] = useState([]);
 
     useEffect(()=> {
         axios.get('http://localhost:5001/project/projects')
@@ -19,9 +20,17 @@ const Home = () => {
         .catch((err) => {
             console.log(err)
         })
-        window.scrollTo({
-            top: 0
-        });
+    }, [])
+
+    useEffect(() => {
+        axios.get('http://localhost:5001/blog/blogposts')
+        .then((response) => {
+            setBlogposts(response.data);
+            console.log(blogposts)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }, [])
 
     
@@ -43,29 +52,8 @@ const Home = () => {
                 </section>
                 <section className='home__section'>
                     <div className='home__container home__container--projects'>
-                        {/* <div className='home__section-container'>
-                            <h2 className='home__subheading'>Recent Work</h2>
-                            <p className='home__description home__description--section'>We take immense pride in presenting our latest creations. Explore our Recent Work and discover the artistry and craftsmanship that defines us. </p>
-                        </div> */}
-                        <div className='home__work-div'>
-                            <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
-                        </div>
-                        <div className='home__work-div'>
-                            <img alt='project' className='home__work' src={require('../../assets/images/work3.png')}/>
-                        </div>
-                        <div className='home__work-div'>
-                            <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
-                        </div>
-                        <div className='home__work-div'>
-                            <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
-                        </div>
-                        <div className='home__work-div'>
-                            <img alt='project' className='home__work' src={require('../../assets/images/work2.png')}/>
-                        </div>
                         {projects.map((project) => (
-                            <div onClick={()=>{navigate(`project/${project._id}`)}} className='home__work-div' key={project._id} style={{ backgroundImage: `url(${project.image.url})` }}>
-
-                            </div>
+                            <img onClick={()=>{navigate(`project/${project._id}`)}} className='home__work-div' key={project._id} src={project.image.url} /*style={{ backgroundImage: `url(${project.image.url})` }}*//>
                         ))}
                         
                     </div>
@@ -73,19 +61,25 @@ const Home = () => {
                 <section className='home__section home__section--accent'>
                     <div className='home__container'>
                         <div className='home__testimonial'>
-                            <h3 className='home__customer'>Donald Trump</h3>
-                            <p className='home__description'>Partnering with Palm Beach Kitchens and Baths has transformed my home.<br/><br/> Their expertise in kitchen and bath design, along with their superb customer service, made the entire process a pleasure.<br/><br/> For exceptional home upgrades, Palm Beach Kitchens and Baths is the name to trust!</p>
-                            <h4 className='home__testimonial-date'>June 2022</h4>
+                            <h3 className='home__customer'>Anna Oscar</h3>
+                            <p className='home__description'>Collaborating with Palm Beach Kitchens and Baths has been life-changing.<br/><br/> Their design prowess and attentive service truly stand out.<br/><br/> For extraordinary home transformations, Palm Beach Kitchens and Baths is the ultimate choice!</p>
+                            <h4 className='home__testimonial-date'>July 2022</h4>
                         </div>
                         <div className='home__testimonial'>
-                            <h3 className='home__customer'>Elon Musk</h3>
-                            <p className='home__description'>Optimum Cabinets has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive.<br/><br/> I've had the opportunity to collaborate with various companies, but Optimum Cabinets' unique blend of creativity and craftsmanship sets them apart. </p>
+                            <h3 className='home__customer'>Rich Cleveland</h3>
+                            <p className='home__description'>Palm Beach Kitchens and Kabinets has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive.<br/><br/> I've had the opportunity to collaborate with various companies, but unique blend of creativity and craftsmanship sets them apart. </p>
                             <h4 className='home__testimonial-date'>December 2021</h4>
                         </div>
                         <div className='home__testimonial'>
-                            <h3 className='home__customer'>Mark Zuckerberg</h3>
+                            <h3 className='home__customer'>Dan Hassan</h3>
                             <p className='home__description'>Partnering with Palm Beach Kitchens and Baths has transformed my home.<br/><br/> Their expertise in kitchen and bath design, along with their superb customer service, made the entire process a pleasure.<br/><br/> For exceptional home upgrades, Palm Beach Kitchens and Baths is the name to trust!</p>
                             <h4 className='home__testimonial-date'>June 2022</h4>
+                        </div>
+                        <div className='home__testimonial'>
+                            <h3 className='home__customer'>Mark Milman</h3>
+                            <p className='home__description'>Teaming up with Palm Beach Kitchens and Baths is a game-changer.
+                                Their kitchen and bath design know-how, plus top-tier service, made it a delightful journey.<br/><br/>For unmatched home enhancements, trust Palm Beach Kitchens and Baths!</p>
+                            <h4 className='home__testimonial-date'>October 2022</h4>
                         </div>
                     </div>
                 </section>
@@ -108,27 +102,20 @@ const Home = () => {
                     </div>
                 </section> */}
                 <section className='home__section'>
-                    <div className='home__container'>
-                        <div className='home__section-container'>
-                        <h2 className='home__subheading'>Recent Blog Posts</h2>
-                            <p className='home__description home__description--section'>As a leader in the cabinet industry, we take pride in offering valuable information, tips, and trends to enhance your home. Explore our blog to stay updated on the latest in cabinet design, organization, and more. Knowledge is the key to unlocking the full potential of your living spaces, and we're here to guide you every step of the way.</p>
-                        </div>
-                        <div className='home__blogpost'>
-                            <img alt='article' className='home__blog-image' src={require('../../assets/images/blog2.png')}/>
-                            <div className='home__inner'>
-                                <h3 className='home__blog-name'>How to Build a Cabinet Yourself</h3>
-                                <h4 className='home__testimonial-date'>March 2022</h4>
-                                <p className='home__description'>Ready to dive into the world of DIY cabinet construction? Our upcoming blog post has got you covered. Discover the essential steps and tips for crafting your own custom cabinets and transform your space with your woodworking skills....</p>
+                    <div className='home__container home__container--blog'>
+                        {blogposts.map((blogpost) => (
+                            <div onClick={()=>{navigate(`blog/${blogpost._id}`)}} className='home__blogpost' key={blogpost._id}>
+                                <div className='home__blog-image' style={{ backgroundImage: `url(${blogpost.image.url})` }}>
+                                </div>
+                                <div className='home__inner'>
+                                <h3 className='home__blog-name'>{blogpost.title}</h3>
+                                <h4 className='home__testimonial-date'>
+                                    {new Date(blogpost.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                                </h4>
+                                <p className='home__description'>{blogpost.summary}</p>
                             </div>
-                        </div>
-                        <div className='home__blogpost'>
-                            <img alt='article' className='home__blog-image' src={require('../../assets/images/blog3.png')}/>
-                            <div className='home__inner'>
-                                <h3 className='home__blog-name'>How to Choose a Cabinet</h3>
-                                <h4 className='home__testimonial-date'>June 2022</h4>
-                                <p className='home__description'>Selecting the perfect cabinets for your home is a decision that combines functionality and style. In our upcoming blog post, we delve into the art of choosing cabinets that not only complement your space but also optimize your storage needs...</p>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </section>
                 {/* <section className='home__section'>

@@ -23,10 +23,6 @@ const Contact = () => {
                     </div>
                 </section>
         <main className='contact'>
-        
-        <section className='contact__section contact__section--image'>
-            <img className='contact__image' alt='worker on a kitchen' src={require('../../assets/images/contact.png')}/>
-        </section>
         <section className='contact__section contact__section--form'>
             <form className='contact__form'>
                 <h1 className='contact__heading'>Get a Quote Today</h1>
@@ -44,8 +40,8 @@ const Contact = () => {
                     <label className='contact__label' htmlFor='email'>Email:</label>
                 </div>
                 <div className='contact__input-div'>
-                    <textarea required className='contact__input contact__input--textarea' rows={5} name='name' id='name' />
-                    <label className='contact__label' htmlFor='name'>How can we help:</label>
+                    <textarea required className='contact__input contact__input--textarea' rows={5} name='bio' id='bio' />
+                    <label className='contact__label' htmlFor='bio'>How can we help:</label>
                 </div>
                 <button className='contact__cta'>Submit</button>
             </form>
