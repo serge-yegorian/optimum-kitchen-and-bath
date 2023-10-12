@@ -25,7 +25,7 @@ const BlogPost = () => {
                 top: 0
             });
         
-        axios.get(`http://localhost:5001/blog/blogpost/${projectId}`)
+        axios.get(`https://clownfish-app-f6era.ondigitalocean.app/blog/blogpost/${projectId}`)
         .then((response) => {
             console.log(response.data)
             setTitle(response.data.title)

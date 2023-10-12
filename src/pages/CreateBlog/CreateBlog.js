@@ -19,7 +19,7 @@ const CreateBlog = () => {
     useEffect(()=> {
         const password = localStorage.getItem('floridakitchencabinetsPW');
         console.log(password)
-        axios.post('http://localhost:5001/project/check', {password})
+        axios.post('https://clownfish-app-f6era.ondigitalocean.app/project/check', {password})
         .then((response) => {
             console.log(response)
         })
@@ -37,7 +37,7 @@ const CreateBlog = () => {
         data.append("summary", summary)
         data.append("projectContent", projectContent)
         data.append("dateFinished", dateFinished)
-        axios.post('http://localhost:5001/blog/blogpost', data)
+        axios.post('https://clownfish-app-f6era.ondigitalocean.app/blog/blogpost', data)
         .then((response)=>{
             console.log(response.data)
             navigate(`/blog/${response.data._id}`)

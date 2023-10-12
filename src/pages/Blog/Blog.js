@@ -18,7 +18,7 @@ const Blog = () => {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:5001/blog/blogposts')
+        axios.get('https://clownfish-app-f6era.ondigitalocean.app/blog/blogposts')
         .then((response) => {
             setBlogposts(response.data);
             console.log(blogposts)
