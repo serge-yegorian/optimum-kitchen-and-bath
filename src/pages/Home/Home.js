@@ -118,9 +118,6 @@ const Home = () => {
                         ))}
                     </div>
                 </section>
-                {/* <section className='home__section'>
-                    <button className='home__cta home__cta--main'>Request a Quote</button>
-                </section> */}
             </main>
             <Footer/>
         </>
