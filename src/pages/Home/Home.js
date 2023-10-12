@@ -67,7 +67,7 @@ const Home = () => {
                         </div>
                         <div className='home__testimonial'>
                             <h3 className='home__customer'>Rich Cleveland</h3>
-                            <p className='home__description'>Palm Beach Kitchens and Kabinets has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive.<br/><br/> I've had the opportunity to collaborate with various companies, but unique blend of creativity and craftsmanship sets them apart. </p>
+                            <p className='home__description'>Palm Beach Kitchens and Baths has left a lasting impression on me.<br/><br/> Their dedication to precision and their innovative approach to cabinetry is truly impressive.<br/><br/> I've had the opportunity to collaborate with various companies, but unique blend of creativity and craftsmanship sets them apart. </p>
                             <h4 className='home__testimonial-date'>December 2021</h4>
                         </div>
                         <div className='home__testimonial'>
@@ -76,7 +76,7 @@ const Home = () => {
                             <h4 className='home__testimonial-date'>June 2022</h4>
                         </div>
                         <div className='home__testimonial'>
-                            <h3 className='home__customer'>Mark Milman</h3>
+                            <h3 className='home__customer'>Rodrigo Ferrierra De Castro</h3>
                             <p className='home__description'>Teaming up with Palm Beach Kitchens and Baths is a game-changer.
                                 Their kitchen and bath design know-how, plus top-tier service, made it a delightful journey.<br/><br/>For unmatched home enhancements, trust Palm Beach Kitchens and Baths!</p>
                             <h4 className='home__testimonial-date'>October 2022</h4>
