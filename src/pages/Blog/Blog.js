@@ -49,16 +49,16 @@ const Blog = () => {
             </section>
             <section className='blog__section'>
                 {blogposts.map((blogpost) => (
-                            <div onClick={()=>{navigate(`blog/${blogpost._id}`)}} className='blog__blogpost' key={blogpost._id}>
+                            <div onClick={()=>{navigate(`/blog/${blogpost._id}`)}} className='blog__blogpost' key={blogpost._id}>
                                 <div className='blog__blog-image' style={{ backgroundImage: `url(${blogpost.image.url})` }}>
                                 </div>
                                 <div className='blog__inner'>
-                                <h3 className='blog__blog-name'>{blogpost.title}</h3>
-                                <h4 className='blog__testimonial-date'>
-                                    {new Date(blogpost.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
-                                </h4>
-                                <p className='home__description'>{blogpost.summary}</p>
-                            </div>
+                                    <h3 className='blog__blog-name'>{blogpost.title}</h3>
+                                    <h4 className='blog__testimonial-date'>
+                                        {new Date(blogpost.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                                    </h4>
+                                    <p className='home__description'>{blogpost.summary}</p>
+                                </div>
                             </div>
                         ))}
             </section>
