@@ -18,8 +18,12 @@
     }
 
     &__container {
-        display: flex;
-        gap: 2rem;
+        @include desktop {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     }
 
     &__subheading {
@@ -36,10 +40,30 @@
 
     &__image{
         width: 100%;
+        min-height: 12rem;
+        background-position: center;
+        background-size: cover;
     } 
+
+    &__image--kevin {
+        background-image: url('../../assets/images/worker1.png');
+    }
+
+    &__image--rodrigo {
+        background-image: url('../../assets/images/worker2.png');
+    }
+
+    &__image--renaldo {
+        background-image: url('../../assets/images/worker3.png');
+    }
 
     &__member {
         margin-bottom: 2rem;
+        flex-grow: 1;
+        @include desktop {
+            max-width: 30%;
+        }
+        
     }
 
     &__name {
