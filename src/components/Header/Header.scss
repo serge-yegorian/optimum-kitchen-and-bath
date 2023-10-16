@@ -16,14 +16,7 @@
         top: 0;
         padding: 0 2rem;
         border-bottom: 2px solid white;
-        visibility: hidden;
-        opacity: 0;
         transition: 0.5s;
-    }
-
-    &--scrolled {
-        opacity: 1;
-        visibility: visible;
     }
 
     &__section {

@@ -11,7 +11,7 @@ const Admin = () => {
 
     const login = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5001/project/login', {password})
+        axios.post('https://clownfish-app-f6era.ondigitalocean.app/project/login', {password})
         .then((response) => {
             console.log(response.data)
             window.localStorage.setItem('floridakitchencabinetsPW', response.data);

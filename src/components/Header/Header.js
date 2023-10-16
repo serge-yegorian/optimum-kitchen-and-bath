@@ -15,30 +15,10 @@ const Header = () => {
         menu.classList.toggle('header__options--open')
         }
 
-        const [isScrolled, setIsScrolled] = useState(false);
-
-        useEffect(() => {
-            const handleScroll = () => {
-            // Check the scroll position and update the isScrolled state
-            const scrollThreshold = 1; // Adjust this value as needed
-            const scrolled = window.scrollY > scrollThreshold;
-            setIsScrolled(scrolled);
-            };
-
-            // Add a scroll event listener when the component mounts
-            window.addEventListener('scroll', handleScroll);
-
-            // Clean up the event listener when the component unmounts
-            return () => {
-            window.removeEventListener('scroll', handleScroll);
-            };
-        }, []);
-
         // Apply a CSS class based on the isScrolled state
-        const headerClass = isScrolled ? 'header--scrolled' : '';
 
     return (
-        <header className={`header ${headerClass}`}>
+        <header className={`header`}>
             <div className='header__section'>
             <img onClick={()=>{navigate('/')}} className='header__logo' alt='logo' src={require('../../assets/images/logo.png')}/>
             <ul className='header__list'>
