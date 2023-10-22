@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div className='footer__container'>
                 <h3 className='footer__subheading'>Palm Beach Kitchens and Baths:</h3>
-                <p className='footer__description'>Palm Beach Kitchens and Baths is your trusted partner in creating the perfect cabinetry solutions for your space.</p>
+                <p className='footer__description'>Palm Beach Kitchens and Baths is your trusted partner in creating the perfect cabinetry solutions for your space.<br/><br/>Contractor license: CRC1328688</p>
             </div>
             </div>
         </footer>
