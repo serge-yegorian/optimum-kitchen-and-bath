@@ -43,7 +43,7 @@ const Home = () => {
                     <div className='home__container home__container--black'>
                         <div>
                         <h1 className='home__heading'>Palm Beach<br/> Kitchens and Baths</h1>
-                        <p className='home__slogan'>ENHANCING LIVES THROUGH DESIGN</p>
+                        <p className='home__slogan'>ENHANCING LiVES THROUGH DESIGN</p>
                         </div>
                     </div>
                     <div className='home__container'>
