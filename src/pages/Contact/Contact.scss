@@ -115,5 +115,14 @@
         flex-direction: column;
         align-items: center;
     }
+
+    &__description--phone {
+        color: $main;
+        transition: 0.2s;
+        text-decoration: none;
+    }
+    &__description--phone:hover {
+        color: $mainhover;
+    }
     
 }
